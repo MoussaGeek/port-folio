@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A propos</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+   <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/profil.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">À Propos de Moi</h1>
+                    <p>Je suis titulaire de deux licences, l'une en réseau télécom
+                         et l'autre en santé environnementale. J'ai également deux certificats en 
+                         développement web et mobile, ce qui me donne un profil multidisciplinaire, 
+                         combinant des compétences techniques dans les réseaux et télécommunications, 
+                         une expertise en santé environnementale, ainsi qu'une maîtrise du développement 
+                         d'applications web et mobiles. J'ai aussi montré un intérêt marqué pour la conception d'applications,
+                         le wireframing, et l'utilisation d'outils comme Figma et App Inventor pour créer des interfaces et 
+                         des applications interactives.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Compétences</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Éducation</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Conception d'interfaces Web/d'applications</li>
+                            <li><span>Développement Web</span><br>Développement d'applications Web</li>
+                            <li><span>Développement d'applications</span><br>Création d'applications Android/iOS</li>
+                        </ul>
+                    </div><div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Développement web</span><br>Création de sites web en utilisant HTML, CSS, JavaScript.</li>
+                            <li><span>Développement mobile</span>
+                                <br>Création d'applications mobiles via App Inventor, avec des fonctionnalités interactives.
+                                <br>Utilisation de frameworks comme Ionic et de solutions no-code/low-code comme Flutter Flow.</li>
+                            <li><span>Conception d'interface utilisateur (UI/UX)</span>
+                                <br>Wireframing et prototypage avec des outils comme Figma et Pencil.
+                                <br>Conception d'interfaces adaptatives et interactives pour différentes tailles d'écran.
+                                <br>Connaissance des méthodes de conception d'interfaces (Material Design, Flat Design, Metro Design).</li>
+                        </ul>
+                    </div><div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2024</span><br>Certification en développement Web et Mobile chez l'OIF</li>
+                            <li><span> AOUT 2021 - 31 MARS 2022</span><br>Certificat à Orange Digital Center en développement Web et Mobile</li>
+                            <li><span>2017 - 2021</span><br>Licence à l'Institut National De Formation En Sciences de la Santé (INFSS) en Santé Environnementale</li>
+                            <li><span>2016 - 2021</span><br>Licence à la Faculté des Sciences et Techniques (FST) en Réseau/Télecom</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
