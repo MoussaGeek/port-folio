@@ -16,7 +16,7 @@
         emailjs.init("NhNBKXQkvWTJ_KHMy");
     })();
     </script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="header">
@@ -51,7 +51,7 @@
                     <a href="images/mon-cv.pdf" download class="btn btn2">Télécharger CV</a>
                 </div>
                 <div class="contact-right">
-                    <form>
+                    <form id="contactForm">
                         <input type="text" id="name" name="name" placeholder="Votre Nom" required>
                         <input type="email" id="email" name="email" placeholder="Votre Email" required>
                         <textarea id="message" name="message" rows="6" placeholder="Votre Message"></textarea>

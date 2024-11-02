@@ -1,73 +1,79 @@
+function openmenu() {
+    var sidemenu = document.getElementById("sidemenu");
+    sidemenu.style.right = "0"; // Affiche le menu
+}
+
+function closemenu() {
+    var sidemenu = document.getElementById("sidemenu");
+    sidemenu.style.right = "-200px"; // Cache le menu
+}
+
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
-function opentab(tabname){
-    for(tablink of tablinks){
+function opentab(tabname) {
+    for (let tablink of tablinks) {
         tablink.classList.remove("active-link");
     }
-    for(tabcontent of tabcontents){
+    for (let tabcontent of tabcontents) {
         tabcontent.classList.remove("active-tab");
     }
     event.currentTarget.classList.add("active-link");
     document.getElementById(tabname).classList.add("active-tab");
 }
 
+document.addEventListener("DOMContentLoaded", function() {
 
-// Sélection de l'élément "sidemenu"
-var sidemenu = document.getElementById("sidemenu");
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche la soumission classique du formulaire
 
-function openmenu(){
-    sidemenu.style.right = "0";
-}
+        // Validation des champs
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        let formIsValid = true;
 
-function closemenu(){
-    sidemenu.style.right = "-200px";
-}
+        // Vérifie si tous les champs sont remplis
+        if (!name || !email || !message) {
+            alert("Tous les champs sont requis.");
+            formIsValid = false;
+        }
 
+        // Vérifie le format de l'email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && !emailPattern.test(email)) {
+            alert("Veuillez entrer une adresse email valide.");
+            formIsValid = false;
+        }
 
+        console.log("Form Is Valid:", formIsValid); // Debug
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêche la soumission classique du formulaire
+        // Si le formulaire est valide, appel à sendMail()
+        if (formIsValid) {
+            sendMail();
+        }
+    });
 
-    // Validation des champs
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    let formIsValid = true;
+    function sendMail() {
+        var params = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+        };
 
-    if (!name || !email || !message) {
-        alert("Tous les champs sont requis.");
-        formIsValid = false;
-    }
+        const serviceID = "service_bs7bl99"; // Remplacez par votre ID de service EmailJS
+        const templateID = "template_sjtn0u5"; // Remplacez par votre ID de modèle EmailJS
 
-    if (formIsValid) {
-        // Affiche un message de confirmation
-        document.getElementById('confirmationMessage').style.display = 'block';
-        
-        // Réinitialiser le formulaire
-        document.getElementById('contactForm').reset();
+        emailjs.send(serviceID, templateID, params)
+            .then((res) => {
+                // Réinitialise le formulaire et affiche un message de confirmation
+                document.getElementById("confirmationMessage").style.display = 'block';
+                document.getElementById("contactForm").reset();
+                console.log(res);
+            })
+            .catch(err => {
+                console.error(err);
+                alert("Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.");
+            });
     }
 });
-
-function sendMail() {
-    var params = {
-        name : document.getElementById("name").value,
-        email : document.getElementById("email").value,
-        message : document.getElementById("message").value,
-    };
-
-    const serviceID = "service_bs7bl99";
-    const templateID = "template_sjtn0u5";
-
-    emailjs
-        .send(serviceID, templateID, params)
-        .then((res) => {
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("message").value = "";
-            console.log(res);
-            alert("your message sent successfully");
-        })
-        .catch(err=>console.log(err));
-}
-
