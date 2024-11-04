@@ -74,7 +74,7 @@ nav .fa-solid {
         cursor: pointer;
     }
     .sub-title{
-        font-size: 35px;
+        font-size: 26px;
     }
     .about-col-1, .about-col-2{
         flex-basis: 100%;
@@ -86,7 +86,7 @@ nav .fa-solid {
         font-size: 14px;
     }
     .tab-links{
-        font-size: 16px;
+        font-size: 10px;
         margin-right: 20px;
     }
     .contact-left, .contact-right{
@@ -94,5 +94,11 @@ nav .fa-solid {
     }
     .copyright{
         font-size: 14px;
+    }
+    .services-list div h2{
+        font-size: 13px;
+    }
+    .services-liste div h2{
+        font-size: 13px;
     }
 }
