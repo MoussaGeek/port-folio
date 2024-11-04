@@ -65,7 +65,7 @@ body{
     flex-wrap: wrap;
 }
 .sub-title{
-    font-size: 60px;
+    font-size: 42px;
     font-weight: 600;
     color: #fff;
 }
@@ -108,7 +108,7 @@ body{
 }
 
 .services-list div:hover a {
-    color: #0000ff; /* Change la couleur du lien en bleu quand le div est survolé */
+    color: #0000ff;
     font-weight: bold;
 }
 
