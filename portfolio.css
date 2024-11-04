@@ -96,6 +96,7 @@ body{
 .layer h3{
     font-weight: 500;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .layer a{
