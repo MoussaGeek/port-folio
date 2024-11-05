@@ -88,7 +88,9 @@ body{
     display: inline-block;
 }
 .services-liste div a:hover{
-    color: blue;
+    color: #fff;
+    font-weight: bold;
+    opacity: 1;
 }
 .services-liste div h3{
     color: aqua;
