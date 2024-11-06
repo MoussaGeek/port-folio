@@ -127,3 +127,15 @@ form .btn2{
     margin-top: 20px;
     cursor: pointer;
 }
+
+p a {
+    color: #fff; /* Texte transparent par défaut */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transition douce pour l'effet de survol */
+}
+
+/* Rendre le texte visible au survol */
+p a:hover {
+    color: #fff; /* Change la couleur en bleu ou autre couleur visible au survol */
+    font-weight: bold; /* Facultatif : rend le texte gras au survol */
+}
